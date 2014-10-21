@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /static/sitemap/sitemap-index.xml
+Disallow: /redirect/index.html*
+Disallow: /wishlist/*
+Disallow: /designers/*
+Disallow: /gardens/*
+Disallow: /feature-news/*
+Disallow: /products-page/*
+Disallow: /promenades/*
+Disallow: /uncategorized/*
+Disallow: /plants/*
+Disallow: /basics/*
+Disallow: /specialists/*
+Disallow: /tag/*
+Disallow: /category/search/*
+Disallow: /?src=/wp-content/*
+Disallow: /cms/5/*
+Disallow: /page//*
+Allow: /static/sitemap/sitemap-index.xml
+Sitemap: https://www.jardins-sans-secret.com/sitemap-index.xml
+
+User-agent: bingbot
+Disallow: /

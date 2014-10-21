@@ -1,0 +1,1 @@
+<?php include "static/static_html/vendor_welcome.html"; ?>
