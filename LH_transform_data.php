@@ -45,12 +45,12 @@ $show_results_in_browser = 1;  // Set to 1 to display HTML table of summary resu
 
 // Garden ideas / Plans
 $starting_product_id = 2594;  // 2919;  // lowest product id = 2594
-$ending_product_id   = 4793;  // 2933;  // highest product id = 4793
-$output_data_table = 'LH_results_PLANS';
+$ending_product_id   = 4794;  // 2933;  // highest product id = 4793
+$output_data_table = 'LH_results_PLANS_020415';
 $category_select = "category_type='gi'";		// select Plans categories
 
 // Plants
-//$starting_product_id = 4701;  // 4700;  // 2927;  // lowest product id = 2594
+//$starting_product_id = 4401;  // 4700;  // 2927;  // lowest product id = 2594
 //$ending_product_id   = 4794;  // 4716;  // 2928;  // highest product id = 4793
 //$output_data_table = 'LH_results_PLANTS_0_3400';  // or...
 //$output_data_table = 'LH_results_PLANTS_3401_3900';  // or...
@@ -102,9 +102,6 @@ $patterns[37] = '/\<\/?dl>/';					// remove beginning or ending <dl> tag
 $patterns[38] = '/\<\/?dt>/';					// remove beginning or ending <dt> tag
 $patterns[39] = '/\<h2\>\s?\<\/h2\>/';			// remove empty H2 tag
 $patterns[40] = '/\<font\> color=".*?"/';		// remove font tags with color attribute
-//$patterns[41] = '/Â \]/';				// remove 
-//$patterns[42] = '/Â/';				// remove 
-
 // and corresponding replacements for matches found
 $replacements = array();
 $replacements[0] = ' ';      					// replace non-breaking space codes with space
@@ -148,8 +145,198 @@ $replacements[37] = '';
 $replacements[38] = '';
 $replacements[39] = '';
 $replacements[40] = '';
-//$replacements[41] = '';
-//$replacements[42] = '';
+
+// -------------------------------------------------------
+// Patterns to search and replace in calculator_size field
+$calculator_size_patterns = array();
+$calculator_size_patterns[0] = '/Allium \(small bulb varieties\)/';   	 
+$calculator_size_patterns[1] = '/Allium \(medium bulb varieties\)/';   	 
+$calculator_size_patterns[2] = '/Allium \(large bulb varieties\)/';   	 
+$calculator_size_patterns[3] = '/Anemone blanda/'; 
+$calculator_size_patterns[4] = '/Camassia/'; 
+$calculator_size_patterns[5] = '/Chionodoxa/'; 
+$calculator_size_patterns[6] = '/Crocus \(species\)/'; 
+$calculator_size_patterns[7] = '/Crocus \(large flowers\)/'; 
+$calculator_size_patterns[8] = '/Cyclamen/'; 
+$calculator_size_patterns[9] = '/Eranthis/'; 
+$calculator_size_patterns[10] = '/Eremerus/'; 
+$calculator_size_patterns[11] = '/Erythronium/'; 
+$calculator_size_patterns[12] = '/Fritillaria \(small bulb varieties\)/';   
+$calculator_size_patterns[13] = '/Fritillaria \(large bulb varieties\)/';   
+$calculator_size_patterns[14] = '/Galanthus \(snowdrops\)/'; 
+$calculator_size_patterns[15] = '/Hyacinthoides/'; 
+$calculator_size_patterns[16] = '/Hyacinths/';
+$calculator_size_patterns[17] = '/Ipheion/'; 
+$calculator_size_patterns[18] = '/Iris hollandica/'; 
+$calculator_size_patterns[19] = '/Ixiolirion/';
+$calculator_size_patterns[20] = '/Leucojum/'; 
+$calculator_size_patterns[21] = '/Lilium Candidum/';
+$calculator_size_patterns[22] = '/Muscari/'; 
+$calculator_size_patterns[23] = '/Narcissus \(small flowers\)/';   	 
+$calculator_size_patterns[24] = '/Narcissus \(large flowers\)/';   		 
+$calculator_size_patterns[25] = '/Netaroscordum/';
+$calculator_size_patterns[26] = '/Ornithogalum/'; 
+$calculator_size_patterns[27] = '/Oxalis Adenophylla/';
+$calculator_size_patterns[28] = '/Puschkinia/'; 
+$calculator_size_patterns[29] = '/Ranunculus/'; 
+$calculator_size_patterns[30] = '/Scilla/'; 
+$calculator_size_patterns[31] = '/Triteleia/'; 
+$calculator_size_patterns[32] = '/Tulips \(large flowers\)/';
+$calculator_size_patterns[33] = '/Tulips \(species\)/'; 
+$calculator_size_patterns[34] = '/Achimenes/'; 
+$calculator_size_patterns[35] = '/Acidanthera/'; 
+$calculator_size_patterns[36] = '/Alocasia/';
+$calculator_size_patterns[37] = '/Amaryllis/'; 
+$calculator_size_patterns[38] = '/Anemone/';
+$calculator_size_patterns[39] = '/Babiana/'; 
+$calculator_size_patterns[40] = '/Begonia/'; 
+$calculator_size_patterns[41] = '/Begonia Bertini/'; 
+$calculator_size_patterns[42] = '/Bletilla/';
+$calculator_size_patterns[43] = '/Caladium/'; 
+$calculator_size_patterns[44] = '/Canna/'; 
+$calculator_size_patterns[45] = '/Chlidanthus/'; 
+$calculator_size_patterns[46] = '/Colocasia/';
+$calculator_size_patterns[47] = '/Crinum/'; 
+$calculator_size_patterns[48] = '/Crocosmia/';
+$calculator_size_patterns[49] = '/Dahlia/'; 
+$calculator_size_patterns[50] = '/Eucomis/'; 
+$calculator_size_patterns[51] = '/Freesia/'; 
+$calculator_size_patterns[52] = '/Gladiolus/';
+$calculator_size_patterns[53] = '/Gladiolus \(low growing\)/'; 
+$calculator_size_patterns[54] = '/Gloriosa/'; 
+$calculator_size_patterns[55] = '/Hymenocallis/'; 
+$calculator_size_patterns[56] = '/Ixia/';
+$calculator_size_patterns[57] = '/Leucocoryne/'; 
+$calculator_size_patterns[58] = '/Liatris/';
+$calculator_size_patterns[59] = '/Lilium/'; 
+$calculator_size_patterns[60] = '/Nerine/'; 
+$calculator_size_patterns[61] = '/Polianthes/'; 
+$calculator_size_patterns[62] = '/Ranunculus/';
+$calculator_size_patterns[63] = '/Sparaxis/'; 
+$calculator_size_patterns[64] = '/Sprekelia/'; 
+$calculator_size_patterns[65] = '/Tigridia/'; 
+$calculator_size_patterns[66] = '/Triteleia/';
+$calculator_size_patterns[67] = '/Tritonia/'; 
+$calculator_size_patterns[68] = '/Zantedeschia aethiopica/';
+$calculator_size_patterns[69] = '/Zantedeschia/'; 
+$calculator_size_patterns[70] = '/Zephyranthes/'; 
+// and corresponding replacements for matches found
+$calculator_size_replacements = array();
+$calculator_size_replacements[0] = '2';      		 
+$calculator_size_replacements[1] = '4';      		 
+$calculator_size_replacements[2] = '8';      		 
+$calculator_size_replacements[3] = '3';      		 
+$calculator_size_replacements[4] = '4';      		 
+$calculator_size_replacements[5] = '2';      		 
+$calculator_size_replacements[6] = '2';      		 
+$calculator_size_replacements[7] = '3';      		 
+$calculator_size_replacements[8] = '8';      		 
+$calculator_size_replacements[9] = '2';      		 
+$calculator_size_replacements[10] = '24';      		 
+$calculator_size_replacements[11] = '4';      		 
+$calculator_size_replacements[12] = '3';
+$calculator_size_replacements[13] = '8';       					
+$calculator_size_replacements[14] = '2';
+$calculator_size_replacements[15] = '3';
+$calculator_size_replacements[16] = '4';
+$calculator_size_replacements[17] = '2';
+$calculator_size_replacements[18] = '3';
+$calculator_size_replacements[19] = '3';
+$calculator_size_replacements[20] = '3';
+$calculator_size_replacements[21] = '8';
+$calculator_size_replacements[22] = '2';
+$calculator_size_replacements[23] = '2';
+$calculator_size_replacements[24] = '3';
+$calculator_size_replacements[25] = '4';
+$calculator_size_replacements[26] = '3';
+$calculator_size_replacements[27] = '3';
+$calculator_size_replacements[28] = '2';
+$calculator_size_replacements[29] = '3';
+$calculator_size_replacements[30] = '2';
+$calculator_size_replacements[31] = '2';
+$calculator_size_replacements[32] = '4';
+$calculator_size_replacements[33] = '3';
+$calculator_size_replacements[34] = '2';
+$calculator_size_replacements[35] = '3';
+$calculator_size_replacements[36] = '40';
+$calculator_size_replacements[37] = '8';
+$calculator_size_replacements[38] = '3';
+$calculator_size_replacements[39] = '2';
+$calculator_size_replacements[40] = '6';
+$calculator_size_replacements[41] = '12';
+$calculator_size_replacements[42] = '6';
+$calculator_size_replacements[43] = '10';       					
+$calculator_size_replacements[44] = '16';
+$calculator_size_replacements[45] = '4';
+$calculator_size_replacements[46] = '20';
+$calculator_size_replacements[47] = '16';
+$calculator_size_replacements[48] = '2';
+$calculator_size_replacements[49] = '16';
+$calculator_size_replacements[50] = '5';
+$calculator_size_replacements[51] = '2';
+$calculator_size_replacements[52] = '5';
+$calculator_size_replacements[53] = '4';
+$calculator_size_replacements[54] = '12';
+$calculator_size_replacements[55] = '6';
+$calculator_size_replacements[56] = '2';
+$calculator_size_replacements[57] = '3';
+$calculator_size_replacements[58] = '5';
+$calculator_size_replacements[59] = '8';
+$calculator_size_replacements[60] = '6';
+$calculator_size_replacements[61] = '8';
+$calculator_size_replacements[62] = '3';
+$calculator_size_replacements[63] = '2';
+$calculator_size_replacements[64] = '6';
+$calculator_size_replacements[65] = '5';
+$calculator_size_replacements[66] = '2';
+$calculator_size_replacements[67] = '3';
+$calculator_size_replacements[68] = '16';
+$calculator_size_replacements[69] = '12';
+$calculator_size_replacements[70] = '3';
+
+// -------------------------------------------------------
+// Patterns to search and replace in Average_Height field
+$Average_Height_patterns = array();
+$Average_Height_patterns[0] = '/0 - 1 ft \(0 - 30 cm\)/'; 
+$Average_Height_patterns[1] = '/1 - 2 ft \(30 - 60 cm\)/'; 
+$Average_Height_patterns[2] = '/2 - 3 ft \(60 - 90 cm\)/'; 
+$Average_Height_patterns[3] = '/3 - 4 ft \(90 - 120 cm\)/';
+$Average_Height_patterns[4] = '/4 - 5 ft \(120 - 150 cm\)/'; 
+$Average_Height_patterns[5] = '/5 - 6 ft \(150 - 180 cm\)/'; 
+$Average_Height_patterns[6] = '/6 - 8 ft \(180 - 240 cm\)/'; 
+$Average_Height_patterns[7] = '/8 - 10 ft \(240 - 300 cm\)/'; 
+// and corresponding replacements for matches found
+$Average_Height_replacements = array();
+$Average_Height_replacements[0] = '0,1,';      		 
+$Average_Height_replacements[1] = '1,2,';      		 
+$Average_Height_replacements[2] = '2,3,';      		 
+$Average_Height_replacements[3] = '3,4,';      		 
+$Average_Height_replacements[4] = '4,5,';      		 
+$Average_Height_replacements[5] = '5,6,';      		 
+$Average_Height_replacements[6] = '6,7,8,';      		 
+$Average_Height_replacements[7] = '8,9,10,';      		 
+
+// -------------------------------------------------------
+// Patterns to search and replace in Average_Spread field
+$Average_Spread_patterns = array();
+$Average_Spread_patterns[0] = '/0.5 - 1 ft \(15 - 30 cm\)/'; 
+$Average_Spread_patterns[1] = '/1 - 2 ft \(30 - 60 cm\)/'; 
+$Average_Spread_patterns[2] = '/2 - 3 ft \(60 - 90 cm\)/';
+$Average_Spread_patterns[3] = '/3 - 4 ft \(90 - 120 cm\)/'; 
+$Average_Spread_patterns[4] = '/4 - 5 ft \(120 - 150 cm\)/'; 
+$Average_Spread_patterns[5] = '/5 - 6 ft \(150 - 180 cm\)/'; 
+$Average_Spread_patterns[6] = '/6 - 8 ft \(180 - 240 cm\)/'; 
+$Average_Spread_patterns[7] = '/8 - 10 ft \(240 - 300 cm\)/'; 
+// and corresponding replacements for matches found
+$Average_Spread_replacements = array();
+$Average_Spread_replacements[0] = '.5,1,'; 
+$Average_Spread_replacements[1] = '1,2,';      		 
+$Average_Spread_replacements[2] = '2,3,';      		 
+$Average_Spread_replacements[3] = '3,4,';      		 
+$Average_Spread_replacements[4] = '4,5,';      		 
+$Average_Spread_replacements[5] = '5,6,';      		 
+$Average_Spread_replacements[6] = '6,7,8,'; 
+$Average_Spread_replacements[7] = '8,9,10,'; 
 
 
 // -------------------------------------------------------
@@ -208,6 +395,86 @@ if (mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
+
+
+// -------------------------------------------------------
+// Delete and recreate LH_related_products
+$sql = 'DROP TABLE IF EXISTS LH_related_products' ;
+if (mysqli_query($conn, $sql)) {
+//    echo "Dropped table <em>LH_related_products</em><br>";
+} else {
+    echo "Error dropping table: " . mysqli_error($conn) . "<br>";
+}
+$sql = "CREATE TABLE IF NOT EXISTS LH_related_products (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+product_id INT(11),
+related_products TEXT
+)";
+if (mysqli_query($conn, $sql)) {
+//    echo "Created table: <em>LH_related_images</em><br>";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+
+// -------------------------------------------------------
+// Add Companion Products from the related_product
+//  Need all the names in a single cell comma separated, for ex.:
+//      Verbena Bonariensis (Tall Verbena), Helenium (Sneezeweed), Perovskia Atriplicifolia (Russian Sage), Hemerocallis (Daylilies)
+// -------------------------------------------------------
+// *****************  Generate Lookup Table with RELATED PRODUCTS for each product***************************************
+//
+// Add all product numbers and related images to LH_related_products
+	$query = "SELECT product_id, related_id, name FROM related_product rp 
+			JOIN product p ON rp.related_id=p.id 
+			WHERE (rp.product_id>='" . $starting_product_id . "' AND rp.product_id <='" . $ending_product_id . "' )
+			ORDER BY rp.product_id";
+	$result = mysqli_query($conn,$query);
+
+	$prev_product_id = 0;
+	while($row    = mysqli_fetch_assoc($result))
+	  {
+	      $curr_product_id = $row['product_id'];
+		  $cleaned_related_product_name = preg_replace($patterns, $replacements, $row['name']);
+		  $cleaned_related_product_name = preg_replace('/,/', '&#44;', $cleaned_related_product_name);
+
+	      if ( $prev_product_id !== $curr_product_id ) {
+
+
+// ************************
+//    echo "<hr>product name: " . $cleaned_related_product_name ."'<br>";
+
+			  $sql = "INSERT INTO LH_related_products
+			        (id, product_id, related_products)
+			        VALUES
+			        (NULL, '" . $row['product_id'] . "','" . $cleaned_related_product_name ."')";
+//			  echo "INSERT product... '" . $row['product_id'] . "','" . $cleaned_related_product_name . "'<br>";
+			  if (mysqli_query($conn, $sql)) {
+			  //      echo "";
+			  } else {
+			      echo "<tr><td>Error: " . $sql . "<br>" . mysqli_error($conn) . "</td></tr>";
+			  }
+			  $prev_product_id = $row['product_id'];
+		  } else {
+			$results = mysqli_query($conn,"SELECT related_products FROM LH_related_products WHERE product_id = '" . $row['product_id'] . "'");
+	        $results_array = mysqli_fetch_assoc($results);
+	        $related_products = array_values($results_array)[0];
+//			echo "  same product... '" . $row['product_id'] . "','" . $related_products . "'<br>";
+			$sql = "UPDATE LH_related_products SET product_id='" . $row['product_id'] . "', related_products='" . $related_products . "," . $cleaned_related_product_name . "' WHERE product_id ='" . $row['product_id'] . "'"; 
+		    if (mysqli_query($conn, $sql)) {
+		       //echo "Working...";
+		    } else {
+		       echo "<tr><td>Error: " . $sql . "<br>" . mysqli_error($conn) . "</td></tr>";
+		    }
+	  	  }
+	  }
+
+    echo "Completed generating <em>LH_related_products</em> lookup table.<br>";
+
+// ************************
+
+
+
+
 // -------------------------------------------------------
 // Delete and recreate LH_related_images
 $sql = 'DROP TABLE IF EXISTS LH_related_images' ;
@@ -244,7 +511,7 @@ if (mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
-// *****************  Generate Lookup Table with related images for each product***************************************
+// *****************  Generate Lookup Table with RELATED IMAGES for each product***************************************
 //
 // Add all product numbers and related images to LH_related_images
 	$query = "SELECT product_id, name, caption FROM product_images 
@@ -287,6 +554,8 @@ if (mysqli_query($conn, $sql)) {
 	  	  }
 	  }
 //    echo "Completed generating <em>LH_related_images</em> lookup table.<br>";
+
+
 
 
 // -------------------------------------------------------
@@ -349,7 +618,6 @@ $sql = "CREATE TABLE IF NOT EXISTS " . $output_data_table . " (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 product_id INT(11),
 name VARCHAR(255),
-halfcleaned_description TEXT,
 description TEXT,
 created_date timestamp,
 draft varchar(50),
@@ -395,7 +663,8 @@ image6_alt TEXT,
 image7_alt TEXT,
 image8_alt TEXT,
 image9_alt TEXT,
-image10_alt TEXT
+image10_alt TEXT,
+related_products TEXT
 )";
 if (mysqli_query($conn, $sql)) {
 //    echo "Created table: <em>" . $output_data_table . "</em><br>";
@@ -445,9 +714,6 @@ $webvanta_data_type = $_POST["webvanta_data_type"];
     }
 
 	// For stage 1 make LH_products_stage1 table, with only rows of the selected category type(s) and with cleaned up data.
-	
-	
-	// INSERT ERRORS OCCURRING ON SIX PRODUCTS WHERE category_type='ds', SO EXCLUDING FROM OUTPUT FOR NOW...
 	$query = "SELECT p.id, p.name, pic.product_id, pic.category_id, pc.parent_id, pc.category_name, pc.category_type FROM product p 
 			JOIN product_in_category pic ON p.id=pic.product_id 
 			JOIN product_category pc ON pic.category_id=pc.id
@@ -482,7 +748,7 @@ $webvanta_data_type = $_POST["webvanta_data_type"];
 	      echo "<tr><td>Error: " . $sql . "<br>" . mysqli_error($conn) . "</td></tr>";
 	  }
 	  }
-    echo "Completed table <em>LH_products_stage1</em><br>";
+//    echo "Completed table <em>LH_products_stage1</em><br>";
 
 
 	// *****************  Generate Lookup Table with Root Categories and Taxonomy Paths for each Category  ***************************************
@@ -545,7 +811,7 @@ $webvanta_data_type = $_POST["webvanta_data_type"];
 	      echo "<tr><td>Error: " . $sql . "<br>" . mysqli_error($conn) . "</td></tr>";
 	  }
 	  }
-    echo "Completed generating <em>LH_taxonomy_paths</em> lookup table.<br>";
+//    echo "Completed generating <em>LH_taxonomy_paths</em> lookup table.<br>";
 
 	
 	// *****************  Add columns to LH_categories_table, then add data  ***************************************
@@ -599,7 +865,7 @@ $webvanta_data_type = $_POST["webvanta_data_type"];
 	      echo "<tr><td>Error: " . $sql . "<br>" . mysqli_error($conn) . "</td></tr>";
 	  }
 	  }
-    echo "Completed table <em>LH_products_stage2</em><br>";
+//    echo "Completed table <em>LH_products_stage2</em><hr>";
 	
 	// Generate list of columns, one for each taxonomy term (category_name) in selection
 	// Select top-level rows of category_type, to be used as taxonomy terms in Webvanta
@@ -610,13 +876,13 @@ $webvanta_data_type = $_POST["webvanta_data_type"];
 	  {
 	  // top-level category names are used as column names for the LH_products_stage2 table
 	  $column_names_array[] = $row['column_name'];
-echo "************* column_name = " . $column_name . "<hr>";
 	  }
 	
 	// Summarize table for final results, generate output data table with one row per product, with cleaned up names and description, and concatenated taxonomy paths
 	$query = "SELECT * FROM LH_products_stage2 s2 
 			JOIN product p ON s2.product_id=p.id
-			JOIN LH_related_images ri ON s2.product_id=ri.product_id";
+			JOIN LH_related_images ri ON s2.product_id=ri.product_id
+			JOIN LH_related_products rp ON s2.product_id=rp.product_id";
 	$result = mysqli_query($conn,$query);
 	
 	$curr_product_id = '';
@@ -625,8 +891,6 @@ echo "************* column_name = " . $column_name . "<hr>";
 	  // When product switches, insert new row with initial data
 	  if ( $curr_product_id <> $row['product_id'] ) {
 	    $curr_product_id = $row['product_id'];
-	    
-	    // delete taxonomy_paths from previous product
 
         $cleaned_name = preg_replace($patterns, $replacements, $row['name']);
 // ***
@@ -646,9 +910,6 @@ echo "************* column_name = " . $column_name . "<hr>";
 	    // Replace stars (HTML char &#9733;) with bulleted list (HTML unordered list)
   	    if ( preg_match('/&\#9733;/',$cleaned_description) ) {
   	    
-// *** TESTING
-$halfcleaned_description = $cleaned_description;
-
 		    //   Step 1: Replace first instance of star with <ul><li>    
 		    $cleaned_description = preg_replace('/&\#9733;/', '<ul>\r\n\<li>', $cleaned_description, 1); 
 
@@ -699,12 +960,10 @@ $halfcleaned_description = $cleaned_description;
 		    //   Step 13: Replace </li><h2> with  </li></ul><h2> 
 		    $cleaned_description = preg_replace('/\<\/li\>\s*?\<h2\>/', '</li>\r\n</ul>\r\n\r\n<h2>', $cleaned_description); 
 		    
-// ********************************
-
-		    //   Step : In case there's more than one bulleted list in description, replace </li><p> with  </li></ul><p> 
+		    //   Step 14: In case there's more than one bulleted list in description, replace </li><p> with  </li></ul><p> 
 		    $cleaned_description = preg_replace('/\<\/li\>\s*?\<p\>/', '</li>\r\n</ul>\r\n\r\n<p>', $cleaned_description); 
 
-		    //   Step : For same reason, replace  </p><li>  with </p><ul><li>
+		    //   Step 15: For same reason, replace  </p><li>  with </p><ul><li>
 		    $cleaned_description = preg_replace('/\<\/p\>\s*?\<li\>/', '</p>\r\n\r\n<ul>\r\n<li>', $cleaned_description);
 //echo "DESCRIP after: " . $cleaned_description . "<br><br><br><br><HR>";
 	    }
@@ -715,6 +974,8 @@ $halfcleaned_description = $cleaned_description;
 		  $cleaned_calculator_size = preg_replace('/[-;]/', ',', $cleaned_calculator_size);	// replace hyphen and semi-colon with comma
 		  $cleaned_calculator_size = preg_replace('/\s+/', '', $cleaned_calculator_size);		// remove any spaces
 	    } 
+		// Run search/replace specific to calculator_size field
+	    $cleaned_calculator_size = preg_replace($calculator_size_patterns, $calculator_size_replacements, $cleaned_calculator_size);
 
 	    // "status" field from "product" table is to assigned to "draft" field in Webvanta, and if draft cell = "0" replace with "true" -> if not "0" leave blank
 	    if ( $row['status'] == 0) { 
@@ -729,14 +990,34 @@ $halfcleaned_description = $cleaned_description;
 	    	$cleaned_isfeatured = $row['isfeatured'];
 	    }	  
 
-	    $sql = "INSERT INTO " . $output_data_table . " (id, product_id, name, halfcleaned_description, description, created_date, draft, main_picture, calculator_name, calculator_size, requirement_id, seo_keyword, seo_description, layout_type, seo_title, care_id, contact_form_id, map_address, view_count, wider_content, product_tabs, isfeatured, reward_icon, common_name, intro, image_alt, publishing_date, reviewer, rating_count, rating, last_modified, slug";
+	    $sql = "INSERT INTO " . $output_data_table . " (id, product_id, name, description, created_date, draft, main_picture, calculator_name, calculator_size, requirement_id, seo_keyword, seo_description, layout_type, seo_title, care_id, contact_form_id, map_address, view_count, wider_content, product_tabs, isfeatured, reward_icon, common_name, intro, image_alt, publishing_date, reviewer, rating_count, rating, last_modified, slug";
 	    foreach ($column_names_array as $value) {
 	      $sql = $sql . ", " . $value;
 	    }
-	    $sql = $sql . ", image2, image2_alt, image3, image3_alt, image4, image4_alt, image5, image5_alt, image6, image6_alt, image7, image7_alt, image8, image8_alt, image9, image9_alt, image10, image10_alt) VALUES (NULL, '" . $row['product_id'] . "', '" . $cleaned_name . "', '" . $halfcleaned_description . "', '" . $cleaned_description . "', '" . $row['created_date'] . "', '" . $cleaned_draft . "', '" . $row['main_picture'] . "', '" . $cleaned_calculator_name . "', '" . $cleaned_calculator_size . "', '" . $row['requirement_id'] . "', '" . $cleaned_seo_keyword  . "', '" . $cleaned_seo_description  . "', '" . $row['layout_type'] . "', '" . $cleaned_seo_title  . "', '" . $row['care_id'] . "', '" . $row['contact_form_id'] . "', '" . $row['map_address'] . "', '" . $row['view_count'] . "', '" . $row['wider_content'] . "', '" . $row['product_tabs'] . "', '" . $cleaned_isfeatured . "', '" . $row['reward_icon'] . "', '" . $cleaned_common_name  . "', '" . $cleaned_intro . "', '" . $cleaned_image_alt . "', '" . $row['publishing_date'] . "', '" . $row['reviewer'] . "', '" . $row['rating_count'] . "', '" . $row['rating'] . "', '" . $row['last_modified'] . "', '" . $row['slug'];
+	    $sql = $sql . ", image2, image2_alt, image3, image3_alt, image4, image4_alt, image5, image5_alt, image6, image6_alt, image7, image7_alt, image8, image8_alt, image9, image9_alt, image10, image10_alt, related_products) VALUES (NULL, '" . $row['product_id'] . "', '" . $cleaned_name . "', '" . $cleaned_description . "', '" . $row['created_date'] . "', '" . $cleaned_draft . "', '" . $row['main_picture'] . "', '" . $cleaned_calculator_name . "', '" . $cleaned_calculator_size . "', '" . $row['requirement_id'] . "', '" . $cleaned_seo_keyword  . "', '" . $cleaned_seo_description  . "', '" . $row['layout_type'] . "', '" . $cleaned_seo_title  . "', '" . $row['care_id'] . "', '" . $row['contact_form_id'] . "', '" . $row['map_address'] . "', '" . $row['view_count'] . "', '" . $row['wider_content'] . "', '" . $row['product_tabs'] . "', '" . $cleaned_isfeatured . "', '" . $row['reward_icon'] . "', '" . $cleaned_common_name  . "', '" . $cleaned_intro . "', '" . $cleaned_image_alt . "', '" . $row['publishing_date'] . "', '" . $row['reviewer'] . "', '" . $row['rating_count'] . "', '" . $row['rating'] . "', '" . $row['last_modified'] . "', '" . $row['slug'];
 	    foreach ($column_names_array as $value) {
-	      $sql = $sql . "', '" . $row[$value];
+		    if ( $value == 'Average_Height') {
+				//echo "1 output_data_table product_id: '" . $row['product_id'] . "' ";
+				//echo "   Column: '" . $value . "'  ";
+				//echo "   row val: '" . $row[$value] . "'<br>";
+				//echo "   cleaned: " . preg_replace($Average_Height_patterns, $Average_Height_replacements, $row[$value]) . "<hr>";
+				// Run search/replace specific to Average_Height field
+			    $sql = $sql . "', '" . preg_replace($Average_Height_patterns, $Average_Height_replacements, $row[$value]);
+			} elseif ( $value == 'Average_Spread' ) {
+				//echo "1 output_data_table product_id: '" . $row['product_id'] . "' ";
+				//echo " Average_Spread: '" . $row[$value] . "' ";
+				//echo " Average_Spread_cleaned: " . preg_replace($Average_Spread_patterns, $Average_Spread_replacements, $row[$value]) . "<hr>";
+
+				// Run search/replace specific to Average_Spread field
+			    $sql = $sql . "', '" . preg_replace($Average_Spread_patterns, $Average_Spread_replacements, $row[$value]);
+			} else {
+				//echo "1 output_data_table product_id: '" . $row['product_id'] . "' ";
+				//echo "  Column: '" . $value . "' ";
+				//echo "  Value: '" . $row[$value] . "'<hr>";
+	   			$sql = $sql . "', '" . $row[$value];
+		    }
 	    }
+
 	    $sql = $sql . "', '" . $row['image2'] . "', '" . $row['image2_alt'] . "', '" . 
 		    $row['image3'] . "', '" . $row['image3_alt'] . "', '" . 
 		    $row['image4'] . "', '" . $row['image4_alt'] . "', '" . 
@@ -745,7 +1026,11 @@ $halfcleaned_description = $cleaned_description;
 		    $row['image7'] . "', '" . $row['image7_alt'] . "', '" . 
 		    $row['image8'] . "', '" . $row['image8_alt'] . "', '" . 
 		    $row['image9'] . "', '" . $row['image9_alt'] . "', '" . 
-		    $row['image10'] . "', '" . $row['image10_alt'] . "')";
+		    $row['image10'] . "', '" . $row['image10_alt'];
+		
+	    $sql = $sql . "', '" . $row['related_products'] . "')"; 
+		
+		    
 	    if (mysqli_query($conn, $sql)) {
 	        //echo "Working...";
 	        echo "</tr>";
@@ -754,9 +1039,30 @@ $halfcleaned_description = $cleaned_description;
 	    }
 	    foreach ($column_names_array as $value) {
 	      // Accumulate taxonomy path, concatenating new terms to any pre-existing taxonomy path
-	      $sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $row[$value] . "' WHERE column_name='" . $value . "'"; 
-//echo "<hr><hr>" . "Accumulate taxonomy path, temp_taxonomy_path= " . $row[$value] . "<br>";
-//echo "column_name= '" . $value . "<hr>"; 
+		    if ( $value == 'Average_Height') {
+				// Run search/replace specific to Average_Height field
+				$cleaned_Average_Height = preg_replace($Average_Height_patterns, $Average_Height_replacements, $row[$value]);
+		        $sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $cleaned_Average_Height . "' WHERE column_name='" . $value . "'"; 
+				//echo "2 column_lookup product_id: '" . $row['product_id'] . "' ";
+				//echo "   Column: '" . $value . "'  ";
+				//echo "   row val: '" . $row[$value] . "'<br>";
+				//echo "   cleaned: " . $cleaned_Average_Height . "<hr>";
+			} elseif ( $value == 'Average_Spread' ) {
+				// Run search/replace specific to Average_Spread field
+				$cleaned_Average_Spread = preg_replace($Average_Spread_patterns, $Average_Spread_replacements, $row[$value]);
+		        $sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $cleaned_Average_Spread . "' WHERE column_name='" . $value . "'"; 
+				//echo "2 column_lookup product_id: '" . $row['product_id'] . "' ";
+				//echo "  Average_Spread: '" . $row[$value] . "' ";
+				//echo "  cleaned: '" . $cleaned_Average_Spread . "'<hr>";
+			} else {
+				//echo "2 column_lookup product_id: '" . $row['product_id'] . "' ";
+				//echo "Column: '" . $value . "' ";
+				//echo "Value: '" . $row[$value] . "'<hr>";
+	     	   	$sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $row[$value] . "' WHERE column_name='" . $value . "'"; 
+		    }
+
+			//echo "<hr><hr>" . "Accumulate taxonomy path, temp_taxonomy_path= " . $row[$value] . "<br>";
+			//echo "column_name= '" . $value . "<hr>"; 
 	      if (mysqli_query($conn, $sql)) {
 	          //echo "Working...";
 	      } else {
@@ -765,6 +1071,7 @@ $halfcleaned_description = $cleaned_description;
 	    }
 	  } else {
 	    // For all but first row of a product, update taxonomy-related columns (accumulate and concatenate)
+
 	    foreach ($column_names_array as $value) {
 	      // Get this column's existing temp_taxonomy_path value
 	      $column_query = "SELECT temp_taxonomy_path FROM LH_column_lookup WHERE column_name='" . $value . "'";
@@ -776,7 +1083,28 @@ $halfcleaned_description = $cleaned_description;
 			}
 	
 	        // Update accumulating taxonomy path, check each column in each row and concatenate new values
-	        $sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $this_taxonomy_path . $row[$value] . "' WHERE column_name='" . $value . "'"; 
+		    if ( $value == 'Average_Height') {
+				// Run search/replace specific to Average_Height field
+				$cleaned_Average_Height = preg_replace($Average_Height_patterns, $Average_Height_replacements, $row[$value]);
+		        $sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $this_taxonomy_path . $cleaned_Average_Height . "' WHERE column_name='" . $value . "'"; 
+				//echo "3 column_lookup product_id: '" . $row['product_id'] . "' ";
+				//echo "   Column: '" . $value . "'  ";
+				//echo "   row val: '" . $row[$value] . "'<br>";
+				//echo "   cleaned: " . $cleaned_Average_Height . "<hr>";
+			} elseif ( $value == 'Average_Spread' ) {
+				// Run search/replace specific to Average_Spread field
+				$cleaned_Average_Spread = preg_replace($Average_Spread_patterns, $Average_Spread_replacements, $row[$value]);
+		        $sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $this_taxonomy_path . $cleaned_Average_Spread . "' WHERE column_name='" . $value . "'"; 
+				//echo "3 column_lookup product_id: '" . $row['product_id'] . "' ";
+				//echo "  Average_Spread: '" . $row[$value] . "' ";
+				//echo "  cleaned: '" . $cleaned_Average_Spread . "'<hr>";
+			} else {
+				//echo "3 column_lookup product_id: '" . $row['product_id'] . "' ";
+				//echo "Column: '" . $value . "' ";
+				//echo "Value: '" . $row[$value] . "'<hr>";
+	     	   $sql = "UPDATE LH_column_lookup SET temp_taxonomy_path='" . $this_taxonomy_path . $row[$value] . "' WHERE column_name='" . $value . "'"; 
+		    }
+
 	        if (mysqli_query($conn, $sql)) {
 	          //echo "Working...";
 	        } else {
@@ -784,34 +1112,54 @@ $halfcleaned_description = $cleaned_description;
 	        }
 	
 	        // Update values in summary results table
-	        $sql = "UPDATE " . $output_data_table . " SET " . $value . "='" . $this_taxonomy_path . $row[$value] . "' WHERE product_id='" . $row['product_id'] . "'"; 
+		    if ( $value == 'Average_Height') {
+				//echo "4 output_data_table product_id: '" . $row['product_id'] . "' ";
+				//echo "   Column: '" . $value . "'  ";
+				//echo "   row val: '" . $row[$value] . "'<br>";
+				//echo "   cleaned: " . preg_replace($Average_Height_patterns, $Average_Height_replacements, $row[$value]) . "<hr>";
+				// Run search/replace specific to Average_Height field
+				$cleaned_Average_Height = preg_replace($Average_Height_patterns, $Average_Height_replacements, $row[$value]);
+			    $sql = "UPDATE " . $output_data_table . " SET " . $value . "='" . $this_taxonomy_path . $cleaned_Average_Height . "' WHERE product_id='" . $row['product_id'] . "'"; 
+			} elseif ( $value == 'Average_Spread' ) {
+				// Run search/replace specific to Average_Spread field
+				$cleaned_Average_Spread = preg_replace($Average_Spread_patterns, $Average_Spread_replacements, $row[$value]);
+				//echo "4 output_data_table product_id: '" . $row['product_id'] . "' ";
+				//echo "  Average_Spread: '" . $row[$value] . "' ";
+				//echo "  cleaned: '" . $cleaned_Average_Spread . "'<hr>";
+			    $sql = "UPDATE " . $output_data_table . " SET " . $value . "='" . $this_taxonomy_path . $cleaned_Average_Spread . "' WHERE product_id='" . $row['product_id'] . "'"; 
+			} else {
+				//echo "4 output_data_table product_id: '" . $row['product_id'] . "' ";
+				//echo "Column: '" . $value . "' ";
+				//echo "Value: '" . $row[$value] . "'<hr>";
+		        $sql = "UPDATE " . $output_data_table . " SET " . $value . "='" . $this_taxonomy_path . $row[$value] . "' WHERE product_id='" . $row['product_id'] . "'"; 
+		    }
 
-//echo "Update values in summary results:<br>";
-//echo "  column value= " . $value . "<br>";
-//echo "  this_taxonomy_path= " . $this_taxonomy_path . "<br>";
-//echo "  row[value]= " . $row[$value] . "<br>";
-//echo "  product_id= '" . $row['product_id'] . "<hr>"; 
+			//echo "Update values in summary results:<br>";
+			//echo "  column value= " . $value . "<br>";
+			//echo "  this_taxonomy_path= " . $this_taxonomy_path . "<br>";
+			//echo "  row[value]= " . $row[$value] . "<br>";
+			//echo "  product_id= '" . $row['product_id'] . "<hr>"; 
 
 	        if (mysqli_query($conn, $sql)) {
 	          //echo "Working...";
 	        } else {
 	            echo "Error: " . $sql . "<br>" . mysqli_error($conn) ;
 	        }
-	//    	echo "";
 		  }
 	    }
 	  }
 	  }
     echo "Completed all updates to <em>summary results</em>.<br>";
 	
-	
+
 	// -------------------------------------------------------
 	// Display final results
 	// -------------------------------------------------------
 	if ( $show_results_in_browser == 1 ) {
 		$query = "SELECT * FROM " . $output_data_table;
 		$result = mysqli_query($conn,$query);
-		echo "<table border='1' cellpadding='2' cellspacing='0'><tr><th>product_id</th><th>name</th><th>half-cleaned description</th><th>description</th>";
+		echo "<table border='1' cellpadding='2' cellspacing='0'><tr><th>product_id</th><th>name</th>";
+//		echo "<table border='1' cellpadding='2' cellspacing='0'><tr><th>product_id</th><th>name</th><th>half-cleaned description</th><th>description</th>";
 		foreach ($column_names_array as $value) {
 		  echo "<th>" . $value . "</th>";
 		}
@@ -821,8 +1169,8 @@ $halfcleaned_description = $cleaned_description;
 		    echo "<tr>";
 		    echo "<td>" . $row['product_id'] . "</td>";
 		    echo "<td>" . $row['name'] . "</td>";
-		    echo "<td>" . $row['halfcleaned_description'] . "</td>";
-		    echo "<td>" . $row['description'] . "</td>";
+		    echo "<td>" . $row['related_products'] . "</td>";
+//		    echo "<td>" . $row['description'] . "</td>";
 		    foreach ($column_names_array as $value) {
 		      echo "<td>" . $row[$value] . "</td>";
 		    }
